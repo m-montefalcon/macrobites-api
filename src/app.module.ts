@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import Joi from 'joi';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './config/database.config';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { getMongoConfig } from './config/database.config';
       inject: [ConfigService],
       useFactory: getMongoConfig,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
