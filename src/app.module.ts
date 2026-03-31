@@ -8,6 +8,7 @@ import { getMongoConfig } from './config/database.config';
 import { UsersModule } from './modules/users/users.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { CommentsModule } from './modules/comments/comments.module';
+import { InteractionsModule } from './modules/interactions/interactions.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { CommentsModule } from './modules/comments/comments.module';
     UsersModule,
     PostsModule,
     CommentsModule,
+    InteractionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
