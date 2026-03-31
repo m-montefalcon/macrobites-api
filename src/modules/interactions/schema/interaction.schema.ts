@@ -1,13 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-export type InteractionsDocument = HydratedDocument<Interactions>;
+export type InteractionDocument = HydratedDocument<Interaction>;
 
-// you can define allowed interaction types
 export type InteractionType = 'like' | 'save';
 
 @Schema({ collection: 'interactions', timestamps: true })
-export class Interactions {
+export class Interaction {
   @Prop({ required: true, trim: true })
   user_id: string;
 
@@ -21,4 +20,4 @@ export class Interactions {
   type: InteractionType;
 }
 
-export const InteractionsSchema = SchemaFactory.createForClass(Interactions);
+export const InteractionSchema = SchemaFactory.createForClass(Interaction);
