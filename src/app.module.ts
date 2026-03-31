@@ -6,6 +6,7 @@ import Joi from 'joi';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './config/database.config';
 import { UsersModule } from './modules/users/users.module';
+import { PostsModule } from './modules/posts/posts.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { UsersModule } from './modules/users/users.module';
       useFactory: getMongoConfig,
     }),
     UsersModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
