@@ -17,7 +17,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "seed:create": "ts-node -r tsconfig-paths/register --project tsconfig.seed.json src/seed/create-seeder.ts",
+    "seed:all":   "ts-node -r tsconfig-paths/register --project tsconfig.seed.json src/seed/index.ts",
+    "seed":       "ts-node -r tsconfig-paths/register --project tsconfig.seed.json src/seed/index.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.17",
@@ -26,6 +29,7 @@
     "@nestjs/mapped-types": "^2.1.1",
     "@nestjs/mongoose": "^11.0.4",
     "@nestjs/platform-express": "^11.0.1",
+    "bcryptjs": "^3.0.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "joi": "^18.1.2",
