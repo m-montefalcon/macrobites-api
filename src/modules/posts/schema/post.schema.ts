@@ -52,6 +52,9 @@ export class Post {
 
   @Prop({ required: true, type: Number, default: 0 })
   saves_counts: number;
+
+  @Prop({ type: Date, default: null })
+  deleted_at?: Date;
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);
